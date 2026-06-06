@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  /* Trust Code Professional Brand Palette */
+  color-scheme: light;
+  /* Primary: Dark Navy Blue #0B1F3A */
+  --primary: 217 56% 15.5%;
+  --primary-foreground: 0 0% 100%;
+  /* Secondary: Deep Teal #105050 */
+  --secondary: 180 54% 22.2%;
+  --secondary-foreground: 0 0% 100%;
+  /* Accent: Bright Teal #20B2AA */
+  --accent: 177 100% 42.7%;
+  --accent-foreground: 0 0% 100%;
+  /* Background: Light Gray #F5F7FA */
+  --background: 217 33% 97.3%;
+  /* Card: White #FFFFFF */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 6.3%;
+  /* Text: Dark #101010 */
+  --foreground: 0 0% 6.3%;
+  /* Muted: #6B7280 */
+  --muted: 0 0% 95.3%;
+  --muted-foreground: 0 0% 42%;
+  /* Border: #E5E7EB */
+  --border: 0 0% 90.2%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 0 0% 5.9%;
+  --foreground: 0 0% 96.9%;
+  --card: 0 0% 14.1%;
+  --card-foreground: 0 0% 96.9%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 210 47% 23.1%;
+  --secondary: 172 75% 34.3%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 180 100% 50%;
+  --accent-foreground: 0 0% 14.1%;
+  --muted: 0 0% 21.8%;
+  --muted-foreground: 0 0% 60.8%;
+  --border: 0 0% 17.1%;
+  --radius: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
