@@ -43,12 +43,13 @@ export default function Contact() {
       <Navbar />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1F3A' }}>
+        <section className="hero-grid py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
+            <p className="overline mb-5 text-cyan-400">Let&apos;s work together</p>
+            <h1 className="text-5xl uppercase md:text-7xl font-bold mb-6 text-white">
               Get In Touch
             </h1>
-            <p className="text-lg" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+            <p className="text-lg text-slate-400">
               Ready to start your next project? Let&apos;s talk about what we can build together.
             </p>
           </div>
@@ -135,6 +136,7 @@ export default function Contact() {
                       <option value="ecommerce">E-commerce</option>
                       <option value="design">UI/UX Design</option>
                       <option value="maintenance">Maintenance & Support</option>
+                      <option value="social-media">Social Media Marketing</option>
                       <option value="other">Other</option>
                     </select>
                   </div>

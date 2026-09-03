@@ -10,9 +10,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Trust Code - Web Development & Custom Software Solutions',
-  description: 'Build better websites, systems, and software solutions with Trust Code. Professional web development, business systems, and custom software for growing businesses.',
-  generator: 'v0.app',
+  title: 'Trust Code | Digital Growth Partner',
+  description: 'Trust Code creates high-performance websites, business systems, custom software and social media marketing for growing businesses.',
   icons: {
     icon: [
       {

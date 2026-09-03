@@ -1,166 +1,113 @@
 import Link from 'next/link'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import { Code2, Layers, Zap, ShoppingCart, Palette, Wrench, Check } from 'lucide-react'
+import { ArrowRight, BarChart3, Check, Code2, Layers, Megaphone, Palette, ShoppingCart, Sparkles, Target, Wrench, Zap } from 'lucide-react'
+
+const services = [
+  { icon: Code2, title: 'Website Development', description: 'Fast, responsive websites designed to turn visitors into customers.', features: ['Responsive design', 'SEO-ready structure', 'Fast performance'] },
+  { icon: Layers, title: 'Business Systems', description: 'Purpose-built systems that simplify operations and help your team scale.', features: ['Workflow automation', 'Secure integrations', 'Scalable architecture'] },
+  { icon: Zap, title: 'Custom Software', description: 'Reliable software shaped around your business, users, and goals.', features: ['Custom development', 'Cloud deployment', 'Ongoing support'] },
+  { icon: ShoppingCart, title: 'E-commerce', description: 'High-converting online stores with a smooth buying experience.', features: ['Secure checkout', 'Inventory tools', 'Sales analytics'] },
+  { icon: Palette, title: 'UI/UX Design', description: 'Clear, memorable digital experiences your customers enjoy using.', features: ['User research', 'Interactive prototypes', 'Design systems'] },
+  { icon: Wrench, title: 'Care & Maintenance', description: 'Proactive support that keeps your digital products healthy and secure.', features: ['Monitoring', 'Updates and fixes', 'Speed optimization'] },
+]
+
+const packages = [
+  { name: 'Starter', tagline: 'Build a consistent presence', price: '$199', features: ['2 social platforms', '12 posts per month', 'Branded post designs', 'Caption & hashtag writing', 'Monthly performance report'] },
+  { name: 'Growth', tagline: 'Grow reach and engagement', price: '$399', popular: true, features: ['3 social platforms', '20 posts per month', '4 short-form videos', 'Community management', 'Content calendar', 'Detailed growth report'] },
+  { name: 'Scale', tagline: 'Turn attention into revenue', price: '$699', features: ['4 social platforms', '30 posts per month', '8 short-form videos', 'Paid campaign management', 'Daily community support', 'Strategy call & advanced reporting'] },
+]
 
 export default function Services() {
-  const services = [
-    {
-      icon: Code2,
-      title: 'Website Development',
-      description: 'Build stunning, responsive websites that engage your audience and drive conversions.',
-      features: ['Responsive Design', 'Fast Loading', 'SEO Optimized', 'Modern Technologies'],
-    },
-    {
-      icon: Layers,
-      title: 'Business System Development',
-      description: 'Custom-built systems to streamline operations, improve efficiency, and scale your business.',
-      features: ['Custom Solutions', 'Integration Support', 'Scalable Architecture', 'Data Security'],
-    },
-    {
-      icon: Zap,
-      title: 'Custom Software Solutions',
-      description: 'Tailored software solutions designed specifically for your unique business challenges.',
-      features: ['Custom Development', 'Cloud-Ready', 'High Performance', 'Maintenance Support'],
-    },
-    {
-      icon: ShoppingCart,
-      title: 'E-commerce Websites',
-      description: 'Powerful e-commerce platforms that drive sales and provide great customer experience.',
-      features: ['Shopping Cart', 'Payment Gateway', 'Inventory Management', 'Analytics'],
-    },
-    {
-      icon: Palette,
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive designs that users love and that drive business results.',
-      features: ['User Research', 'Wireframing', 'Prototype Design', 'User Testing'],
-    },
-    {
-      icon: Wrench,
-      title: 'Maintenance & Support',
-      description: 'Ongoing support and maintenance to keep your systems running smoothly and securely.',
-      features: ['24/7 Monitoring', 'Bug Fixes', 'Updates & Patches', 'Performance Optimization'],
-    },
-  ]
-
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1F3A' }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
-              Our Services
-            </h1>
-            <p className="text-lg" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-              Comprehensive solutions for all your digital and business needs
-            </p>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service) => {
-                const Icon = service.icon
-                return (
-                  <div
-                    key={service.title}
-                    className="p-8 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow flex flex-col"
-                  >
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#20B2AA' }}>
-                      <Icon style={{ color: '#FFFFFF' }} size={24} />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
-                    
-                    <div className="space-y-2">
-                      {service.features.map((feature) => (
-                        <div key={feature} className="flex items-center gap-2">
-                          <Check size={18} style={{ color: '#20B2AA' }} className="flex-shrink-0" />
-                          <span className="text-sm text-foreground">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )
-              })}
+      <main className="min-h-screen bg-background overflow-hidden">
+        <section className="relative px-4 py-20 sm:px-6 md:py-28 lg:px-8 hero-grid">
+          <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-accent/20 blur-3xl" />
+          <div className="relative mx-auto max-w-5xl text-center">
+            <span className="eyebrow">Digital services that move you forward</span>
+            <h1 className="mt-6 text-4xl font-bold leading-tight text-white md:text-6xl">One partner for your brand, product & growth</h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">From the software behind your business to the content your customers see, we create digital experiences built for measurable growth.</p>
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+              <Link href="#marketing-packages" className="button-accent">View marketing packages <ArrowRight size={18} /></Link>
+              <Link href="/contact" className="button-ghost">Book a free consultation</Link>
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Process</h2>
-              <p className="text-lg text-muted-foreground">
-                How we deliver exceptional results for every project
-              </p>
+        <section className="px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-12 max-w-2xl">
+              <span className="section-kicker">What we do</span>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Digital solutions, thoughtfully connected</h2>
+              <p className="mt-4 text-lg text-muted-foreground">Strategy, design and technology working together—not a collection of disconnected services.</p>
             </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  step: '1',
-                  title: 'Discovery & Planning',
-                  description: 'We understand your business needs, goals, and challenges to create a solid foundation.',
-                },
-                {
-                  step: '2',
-                  title: 'Design & Prototyping',
-                  description: 'We create detailed designs and prototypes to validate ideas before development.',
-                },
-                {
-                  step: '3',
-                  title: 'Development & Implementation',
-                  description: 'Our expert developers build your solution using modern technologies and best practices.',
-                },
-                {
-                  step: '4',
-                  title: 'Testing & Quality Assurance',
-                  description: 'Thorough testing ensures your solution is reliable, secure, and performs excellently.',
-                },
-                {
-                  step: '5',
-                  title: 'Launch & Deployment',
-                  description: 'We smoothly launch your solution and provide full support during the transition.',
-                },
-                {
-                  step: '6',
-                  title: 'Support & Maintenance',
-                  description: 'Ongoing support and updates keep your solution running smoothly and securely.',
-                },
-              ].map((item) => (
-                <div key={item.step} className="flex gap-6">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary-foreground font-bold text-lg">{item.step}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {services.map(({ icon: Icon, title, description, features }) => (
+                <article key={title} className="service-card group">
+                  <div className="icon-box"><Icon size={23} /></div>
+                  <h3 className="mt-6 text-xl font-bold">{title}</h3>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">{description}</p>
+                  <ul className="mt-6 space-y-2.5 border-t border-border pt-5">
+                    {features.map((feature) => <li key={feature} className="flex items-center gap-2.5 text-sm"><Check size={16} className="text-accent" />{feature}</li>)}
+                  </ul>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-lg text-primary-foreground/90 mb-8">
-              Contact us today for a free consultation and let&apos;s discuss which service is perfect for your needs.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors"
-            >
-              Contact Us
-            </Link>
+        <section className="border-y border-white/10 bg-[#071522] px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[.9fr_1.1fr]">
+            <div>
+              <span className="section-kicker">New service</span>
+              <h2 className="mt-3 text-3xl font-bold md:text-5xl">Social media that earns attention—and action.</h2>
+              <p className="mt-5 text-lg leading-relaxed text-muted-foreground">We plan, create and manage content that makes your brand recognizable, builds a real community and supports your sales goals.</p>
+              <Link href="#marketing-packages" className="mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:text-accent">Explore packages <ArrowRight size={18} /></Link>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { icon: Target, title: 'Content strategy', copy: 'A clear monthly plan aligned with your audience and business goals.' },
+                { icon: Sparkles, title: 'Creative production', copy: 'Branded posts, copy and short-form video made to stop the scroll.' },
+                { icon: Megaphone, title: 'Community growth', copy: 'Consistent publishing and genuine engagement across your channels.' },
+                { icon: BarChart3, title: 'Clear reporting', copy: 'Useful insights, not vanity metrics, so we can improve every month.' },
+              ].map(({ icon: Icon, title, copy }) => (
+                <div key={title} className="border border-white/10 bg-[#020b16] p-6"><Icon className="text-accent" size={26} /><h3 className="mt-4 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p></div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="marketing-packages" className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <span className="section-kicker">Simple monthly plans</span>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Social Media Marketing packages</h2>
+              <p className="mt-4 text-muted-foreground">Choose a starting point. Every plan can be tailored to your platforms, audience and goals.</p>
+            </div>
+            <div className="grid items-stretch gap-6 lg:grid-cols-3">
+              {packages.map((item) => (
+                <article key={item.name} className={`price-card ${item.popular ? 'price-card-popular' : ''}`}>
+                  {item.popular && <span className="popular-badge">Most popular</span>}
+                  <p className="text-sm font-semibold text-accent">{item.name}</p>
+                  <h3 className="mt-2 text-xl font-bold">{item.tagline}</h3>
+                  <div className="mt-6 flex items-end gap-1"><span className="text-4xl font-bold">{item.price}</span><span className="pb-1 text-sm text-muted-foreground">/ month</span></div>
+                  <ul className="my-7 flex-1 space-y-3">
+                    {item.features.map((feature) => <li key={feature} className="flex gap-3 text-sm"><Check size={18} className="mt-0.5 shrink-0 text-accent" />{feature}</li>)}
+                  </ul>
+                  <Link href={`/contact?package=${item.name.toLowerCase()}`} className={item.popular ? 'button-accent w-full' : 'button-outline w-full'}>Choose {item.name}</Link>
+                </article>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-sm text-muted-foreground">Ad spend is not included. Need something different? <Link href="/contact" className="font-semibold text-primary underline underline-offset-4">Let&apos;s build a custom plan.</Link></p>
+          </div>
+        </section>
+
+        <section className="px-4 pb-20 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-7 rounded-3xl bg-primary px-7 py-12 text-center text-white md:flex-row md:px-12 md:text-left">
+            <div><p className="text-sm font-semibold uppercase tracking-widest text-accent">Have a project in mind?</p><h2 className="mt-2 text-3xl font-bold">Let&apos;s turn your next idea into growth.</h2></div>
+            <Link href="/contact" className="button-accent shrink-0">Start a conversation <ArrowRight size={18} /></Link>
           </div>
         </section>
       </main>

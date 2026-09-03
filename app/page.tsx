@@ -1,240 +1,59 @@
 import Link from 'next/link'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import { ArrowRight, Code2, Zap, Shield, Layers, Users, CheckCircle } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowUpRight, Check } from 'lucide-react'
+
+const serviceNames = ['Web Design & Development', 'eCommerce Solutions', 'Search Engine Optimization', 'Google Ads', 'Social Media Marketing', 'Branding & Identity', 'Content Creation']
+const services = [
+  { no: '01', title: 'Web Design & Development', copy: 'High-performance digital experiences that look distinctive and turn attention into action.', tags: ['Web Design', 'Development'] },
+  { no: '02', title: 'eCommerce Solutions', copy: 'Fast, intuitive online stores built to simplify buying and support sustainable growth.', tags: ['Commerce', 'Conversion'] },
+  { no: '03', title: 'SEO & Google Ads', copy: 'Search strategies that connect your business with people actively looking for what you offer.', tags: ['Visibility', 'Paid Media'] },
+  { no: '04', title: 'Social Media Management', copy: 'Strategy-led content and campaigns that make your brand recognizable and relevant.', tags: ['Content', 'Growth'] },
+  { no: '05', title: 'Branding & Graphic Design', copy: 'Clear visual systems that give your business a consistent and memorable identity.', tags: ['Identity', 'Design'] },
+  { no: '06', title: 'Content Creation', copy: 'Focused creative content designed for modern channels, audiences and business goals.', tags: ['Creative', 'Campaigns'] },
+]
+const projects = [
+  { title: 'E-Commerce Platform', category: 'Web Development', image: 'https://images.unsplash.com/photo-1460925895917-adf4e65e9b31?w=1000&h=700&fit=crop', description: 'A complete commerce experience built around simpler shopping and scalable management.' },
+  { title: 'Inventory Management System', category: 'Business Systems', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&h=700&fit=crop', description: 'A central system for clearer stock, order and supply-chain operations.' },
+  { title: 'Corporate Website', category: 'Web Design', image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&h=700&fit=crop', description: 'A modern brand platform designed to communicate expertise with confidence.' },
+]
 
 export default function Home() {
-  const services = [
-    {
-      icon: Code2,
-      title: 'Website Development',
-      description: 'Modern, responsive websites built with the latest technologies.',
-    },
-    {
-      icon: Layers,
-      title: 'Business Systems',
-      description: 'Custom-built systems to streamline your business operations.',
-    },
-    {
-      icon: Zap,
-      title: 'Custom Software',
-      description: 'Tailored software solutions for your unique business needs.',
-    },
-  ]
+  return <>
+    <Navbar />
+    <main className="overflow-hidden bg-background">
+      <section className="hero-split">
+        <div className="hero-copy reveal-up">
+          <p className="overline">Web Design · Digital Marketing · Sri Lanka</p>
+          <h1 className="hero-title"><span>YOUR DIGITAL</span><em>GROWTH</em><span className="outline-text">PARTNER</span></h1>
+          <p className="mt-7 max-w-xl text-base leading-7 text-slate-400 md:text-lg">Trust Code builds powerful websites, business systems, software and marketing experiences that help ambitious businesses move forward.</p>
+          <div className="mt-9 flex flex-wrap items-center gap-5"><Link href="/projects" className="pill-cta">View our work <span><ArrowUpRight size={18}/></span></Link><Link href="/contact" className="text-sm font-bold uppercase tracking-widest text-white underline decoration-cyan-400 underline-offset-8 hover:text-cyan-400">Start a project</Link></div>
+          <div className="mt-14 flex flex-wrap gap-x-10 gap-y-3 border-t border-white/10 pt-5 text-xs uppercase tracking-widest text-slate-500"><span>Innovation City</span><a href="mailto:info@trustcode.com" className="hover:text-cyan-400">info@trustcode.com</a><a href="#services" className="ml-auto flex items-center gap-2 hover:text-white">Scroll to explore <ArrowDown size={14}/></a></div>
+        </div>
+        <div className="hero-visual"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&h=1400&fit=crop" alt="Modern collaborative office workspace" className="h-full w-full object-cover"/><div className="absolute inset-0 bg-gradient-to-r from-[#020b16] via-[#020b16]/25 to-transparent"/><div className="absolute bottom-8 right-8 hidden border-r-2 border-cyan-400 pr-4 text-right lg:block"><p className="text-xs uppercase tracking-[.2em] text-slate-300">Design · Technology</p><p className="mt-1 font-heading text-2xl font-bold uppercase text-white">Built to perform</p></div></div>
+      </section>
 
-  const reasons = [
-    {
-      title: 'Expert Team',
-      description: 'Our experienced developers deliver high-quality solutions.',
-    },
-    {
-      title: 'Modern Tech',
-      description: 'We use cutting-edge technologies and best practices.',
-    },
-    {
-      title: 'On-Time Delivery',
-      description: 'Projects completed efficiently and within timeline.',
-    },
-    {
-      title: '24/7 Support',
-      description: 'Continuous support and maintenance for your solutions.',
-    },
-  ]
+      <div className="marquee" aria-label="Our services"><div className="marquee-track">{[...serviceNames,...serviceNames].map((name,i)=><span key={`${name}-${i}`}>{name}<b>✦</b></span>)}</div></div>
 
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      category: 'Web Development',
-      image: 'https://images.unsplash.com/photo-1460925895917-adf4e65e9b31?w=500&h=300&fit=crop',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-    },
-    {
-      title: 'Inventory Management System',
-      category: 'Business Systems',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop',
-      technologies: ['Next.js', 'PostgreSQL', 'React'],
-    },
-    {
-      title: 'Corporate Website',
-      category: 'Web Design',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
-      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript'],
-    },
-  ]
+      <section id="services" className="section-shell scroll-mt-28">
+        <div className="section-head"><div><p className="overline text-cyan-400">What we do</p><h2>Digital services built<br/>for <em>modern brands.</em></h2></div><p>From first idea to lasting growth, we connect strategy, design and technology into one clear digital direction.</p></div>
+        <div className="mt-14 border-t border-white/10">{services.map(service=><Link key={service.no} href="/services" className="service-row"><span className="service-no">{service.no}</span><div><h3>{service.title}</h3><div className="mt-3 flex gap-2">{service.tags.map(tag=><span className="mini-tag" key={tag}>{tag}</span>)}</div></div><p>{service.copy}</p><span className="row-arrow"><ArrowUpRight/></span></Link>)}</div>
+      </section>
 
-  return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1F3A' }}>
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight" style={{ color: '#FFFFFF' }}>
-              Build Better Websites, Systems & Software Solutions
-            </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-              Trust Code helps growing businesses create powerful digital solutions. From stunning websites to complex business systems, we deliver modern software that drives growth.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg hover:opacity-90"
-                style={{ backgroundColor: '#20B2AA', color: '#FFFFFF' }}
-              >
-                View Our Services <ArrowRight className="ml-2" size={20} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg hover:opacity-90"
-                style={{ backgroundColor: '#FFFFFF', color: '#0B1F3A' }}
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </section>
+      <section className="border-y border-white/10 bg-[#071522]">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
+          <div className="about-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=1000&fit=crop" alt="Team collaborating on a digital project" loading="lazy"/></div>
+          <div className="p-8 sm:p-12 lg:p-16"><p className="overline text-cyan-400">About us</p><h2 className="section-title mt-4">Where design, technology and <em>strategy</em> work together.</h2><p className="mt-6 leading-7 text-slate-400">Trust Code helps growing businesses harness the power of modern technology. We create high-quality digital solutions shaped around real business needs and lasting partnerships.</p><div className="mt-9 grid grid-cols-2 gap-x-5 gap-y-4">{['Strategy Driven','Modern Technology','Fast Execution','SEO Focused','Reliable Support','Client-Centric'].map(item=><div key={item} className="flex items-center gap-2 border-b border-white/10 pb-3 text-sm font-semibold text-slate-200"><Check size={15} className="text-cyan-400"/>{item}</div>)}</div><Link href="/about" className="mt-9 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400">Discover our story <ArrowRight size={17}/></Link></div>
+        </div>
+      </section>
 
-        {/* Services Preview */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Services</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive solutions for all your digital needs
-              </p>
-            </div>
+      <section className="section-shell">
+        <div className="section-head"><div><p className="overline text-cyan-400">Selected work</p><h2>Ideas turned into<br/><span className="outline-text">digital products.</span></h2></div><Link href="/projects" className="pill-cta self-end">View all projects <span><ArrowRight size={18}/></span></Link></div>
+        <div className="mt-14 grid gap-6 md:grid-cols-2">{projects.map((project,i)=><Link href="/projects" key={project.title} className={`project-card ${i===0?'md:col-span-2':''}`}><img src={project.image} alt={project.title} loading="lazy"/><div className="project-overlay"/><div className="project-info"><p>{project.category}</p><h3>{project.title}</h3><span>{project.description}</span></div><ArrowUpRight className="absolute right-6 top-6 text-white"/></Link>)}</div>
+      </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {services.map((service) => {
-                const Icon = service.icon
-                return (
-                  <div
-                    key={service.title}
-                    className="p-8 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow"
-                  >
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#20B2AA' }}>
-                      <Icon style={{ color: '#FFFFFF' }} size={24} />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </div>
-                )
-              })}
-            </div>
-
-            <div className="mt-8 text-center">
-              <Link
-                href="/services"
-                className="inline-flex items-center text-primary hover:text-primary/80 font-semibold transition-colors"
-              >
-                Explore All Services <ArrowRight className="ml-2" size={20} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Trust Code?</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                We&apos;re committed to delivering exceptional results that help your business grow
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {reasons.map((reason) => (
-                <div key={reason.title} className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <CheckCircle className="text-accent" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-1">{reason.title}</h3>
-                    <p className="text-sm text-muted-foreground">{reason.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Recent Projects */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Recent Projects</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore some of our latest work and see what we can do for you
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <div
-                  key={project.title}
-                  className="rounded-lg overflow-hidden bg-card border border-border hover:shadow-lg transition-shadow"
-                >
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm font-semibold text-accent mb-2">{project.category}</p>
-                    <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
-                    <div className="flex gap-2 mb-4 flex-wrap">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <Link
-                      href="/projects"
-                      className="inline-flex items-center text-primary hover:text-primary/80 font-semibold transition-colors text-sm"
-                    >
-                      View Project <ArrowRight className="ml-2" size={16} />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 text-center">
-              <Link
-                href="/projects"
-                className="inline-flex items-center text-primary hover:text-primary/80 font-semibold transition-colors"
-              >
-                View All Projects <ArrowRight className="ml-2" size={20} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1F3A' }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>Ready to Get Started?</h2>
-            <p className="text-lg mb-8" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-              Contact us today for a free consultation. Let&apos;s discuss how we can help bring your digital vision to life.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-              style={{ backgroundColor: '#20B2AA', color: '#FFFFFF' }}
-            >
-              Contact Us Today <ArrowRight className="ml-2" size={20} />
-            </Link>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  )
+      <section className="px-4 pb-24 sm:px-6 lg:px-8"><div className="final-cta"><p className="overline text-cyan-400">Your next move</p><h2>Let&apos;s build something<br/><em>that stands out.</em></h2><Link href="/contact" className="pill-cta mt-8">Let&apos;s talk <span><ArrowUpRight size={18}/></span></Link></div></section>
+    </main>
+    <Footer />
+  </>
 }

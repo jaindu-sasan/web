@@ -33,12 +33,13 @@ export default function About() {
       <Navbar />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#0B1F3A' }}>
+        <section className="hero-grid py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
+            <p className="overline mb-5 text-cyan-400">Company · Culture · Approach</p>
+            <h1 className="text-5xl uppercase md:text-7xl font-bold mb-6 text-white">
               About Trust Code
             </h1>
-            <p className="text-lg" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+            <p className="text-lg text-slate-400">
               Building digital solutions that help businesses thrive in a connected world.
             </p>
           </div>
