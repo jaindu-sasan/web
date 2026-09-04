@@ -6,46 +6,20 @@ import { ExternalLink } from 'lucide-react'
 export default function Projects() {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      category: 'Web Development',
-      description: 'A full-featured e-commerce platform with product catalog, shopping cart, and payment processing.',
-      image: 'https://images.unsplash.com/photo-1460925895917-adf4e65e9b31?w=600&h=400&fit=crop',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      title: 'QINZI',
+      category: 'eCommerce Website',
+      description: 'A luxury retail storefront for clothing, slippers, jewellery, and custom designs.',
+      image: 'https://qinzi-iota.vercel.app/cloth1.jpeg',
+      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'v0'],
+      url: 'https://qinzi-iota.vercel.app/',
     },
     {
-      title: 'Inventory Management System',
-      category: 'Business Systems',
-      description: 'A comprehensive inventory system for tracking stock, orders, and supply chain operations.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
-      technologies: ['Next.js', 'PostgreSQL', 'React', 'REST API'],
-    },
-    {
-      title: 'Corporate Website',
-      category: 'Web Design',
-      description: 'A modern, professional website for a growing tech company with portfolio and case studies.',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
-      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript'],
-    },
-    {
-      title: 'Booking System',
-      category: 'Custom Software',
-      description: 'An appointment and booking system for service-based businesses with calendar integration.',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
-      technologies: ['React', 'Firebase', 'Node.js', 'Google Calendar API'],
-    },
-    {
-      title: 'Tourism Website',
-      category: 'Web Development',
-      description: 'An engaging tourism website showcasing attractions, packages, and booking capabilities.',
-      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop',
-      technologies: ['Next.js', 'React', 'Tailwind CSS', 'Headless CMS'],
-    },
-    {
-      title: 'Accounting Software',
-      category: 'Business Systems',
-      description: 'Cloud-based accounting software for managing finances, invoices, and reporting.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      technologies: ['React', 'Python', 'PostgreSQL', 'Stripe'],
+      title: 'WSK Business Services',
+      category: 'Corporate Website',
+      description: 'A professional accounting and tax services website with service pages, a tax calculator, consultation flow, and online payment portal.',
+      image: 'https://w-s-k-business-services.vercel.app/images/hero-business1.png',
+      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'v0'],
+      url: 'https://w-s-k-business-services.vercel.app/',
     },
   ]
 
@@ -101,9 +75,20 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    <button className="w-full inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium text-sm">
-                      View Details <ExternalLink className="ml-2" size={16} />
-                    </button>
+                    {project.url ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium text-sm"
+                      >
+                        View Details <ExternalLink className="ml-2" size={16} />
+                      </a>
+                    ) : (
+                      <button className="w-full inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium text-sm">
+                        View Details <ExternalLink className="ml-2" size={16} />
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}

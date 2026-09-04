@@ -22,10 +22,30 @@ export default function About() {
   ]
 
   const team = [
-    { role: 'CEO & Founder', expertise: 'Business Strategy & Leadership' },
-    { role: 'Lead Developer', expertise: 'Full-Stack Development' },
-    { role: 'UX/UI Designer', expertise: 'User Experience Design' },
-    { role: 'Project Manager', expertise: 'Delivery & Client Relations' },
+    {
+      name: 'Jaindu Sasan Zoysa',
+      role: 'CEO & Founder',
+      expertise: 'Business Strategy, Leadership & Full-Stack Development',
+      image: '/jaindu-sasan-zoysa.jpeg',
+    },
+    {
+      name: 'Savidya Fernando',
+      role: 'Full-Stack Developer & Data Analytics',
+      expertise: 'Full-Stack Development & Data Analytics',
+      image: '/savidya-fernando.jpeg',
+    },
+    {
+      name: 'G.S.K Gunathilake',
+      role: 'Lead Developer',
+      expertise: 'Full-Stack Development',
+      image: '/gsk-gunathilake.jpeg',
+    },
+    {
+      name: 'Thiyagarajah Kobiram',
+      role: 'Full-Stack Development',
+      expertise: 'Full-Stack Development',
+      image: '/full-stack-development.jpeg',
+    },
   ]
 
   return (
@@ -144,10 +164,48 @@ export default function About() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {team.map((member, index) => (
-                <div key={index} className="p-8 rounded-lg bg-card border border-border">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-lg font-bold text-foreground text-center mb-2">{member.role}</h3>
-                  <p className="text-muted-foreground text-center">{member.expertise}</p>
+                <div
+                  key={index}
+                  className={
+                    member.image
+                      ? 'md:col-span-2 grid gap-6 overflow-hidden rounded-lg bg-card border border-cyan-400/30 p-4 sm:p-6 md:grid-cols-[minmax(180px,260px)_1fr] md:items-center md:p-8'
+                      : 'p-8 rounded-lg bg-card border border-border'
+                  }
+                >
+                  {member.image ? (
+                    <div className="overflow-hidden rounded-lg border border-white/10 bg-background shadow-lg shadow-cyan-950/30">
+                      <img
+                        src={member.image}
+                        alt={member.name ?? member.role}
+                        className="h-full max-h-[360px] min-h-[280px] w-full object-cover object-[center_28%] transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-4"></div>
+                  )}
+                  <div className={member.image ? 'text-center md:text-left' : ''}>
+                    {member.name ? (
+                      <p className="overline mb-3 text-cyan-400">{member.role}</p>
+                    ) : null}
+                    <h3
+                      className={
+                        member.image
+                          ? 'text-3xl font-bold uppercase text-foreground sm:text-4xl'
+                          : 'text-lg font-bold text-foreground text-center mb-2'
+                      }
+                    >
+                      {member.name ?? member.role}
+                    </h3>
+                    <p
+                      className={
+                        member.image
+                          ? 'mt-3 text-lg font-semibold text-muted-foreground'
+                          : 'text-muted-foreground text-center'
+                      }
+                    >
+                      {member.name ? member.expertise : 'Full-Stack Developer'}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

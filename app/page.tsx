@@ -13,9 +13,8 @@ const services = [
   { no: '06', title: 'Content Creation', copy: 'Focused creative content designed for modern channels, audiences and business goals.', tags: ['Creative', 'Campaigns'] },
 ]
 const projects = [
-  { title: 'E-Commerce Platform', category: 'Web Development', image: 'https://images.unsplash.com/photo-1460925895917-adf4e65e9b31?w=1000&h=700&fit=crop', description: 'A complete commerce experience built around simpler shopping and scalable management.' },
-  { title: 'Inventory Management System', category: 'Business Systems', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&h=700&fit=crop', description: 'A central system for clearer stock, order and supply-chain operations.' },
-  { title: 'Corporate Website', category: 'Web Design', image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&h=700&fit=crop', description: 'A modern brand platform designed to communicate expertise with confidence.' },
+  { title: 'QINZI', category: 'eCommerce Website', image: 'https://qinzi-iota.vercel.app/cloth1.jpeg', description: 'A luxury retail storefront for clothing, slippers, jewellery and custom designs.', url: 'https://qinzi-iota.vercel.app/' },
+  { title: 'WSK Business Services', category: 'Corporate Website', image: 'https://w-s-k-business-services.vercel.app/images/hero-business1.png', description: 'A professional accounting and tax services website with consultation and payment flows.', url: 'https://w-s-k-business-services.vercel.app/' },
 ]
 
 export default function Home() {
@@ -28,7 +27,7 @@ export default function Home() {
           <h1 className="hero-title"><span>YOUR DIGITAL</span><em>GROWTH</em><span className="outline-text">PARTNER</span></h1>
           <p className="mt-7 max-w-xl text-base leading-7 text-slate-400 md:text-lg">Trust Code builds powerful websites, business systems, software and marketing experiences that help ambitious businesses move forward.</p>
           <div className="mt-9 flex flex-wrap items-center gap-5"><Link href="/projects" className="pill-cta">View our work <span><ArrowUpRight size={18}/></span></Link><Link href="/contact" className="text-sm font-bold uppercase tracking-widest text-white underline decoration-cyan-400 underline-offset-8 hover:text-cyan-400">Start a project</Link></div>
-          <div className="mt-14 flex flex-wrap gap-x-10 gap-y-3 border-t border-white/10 pt-5 text-xs uppercase tracking-widest text-slate-500"><span>Innovation City</span><a href="mailto:info@trustcode.com" className="hover:text-cyan-400">info@trustcode.com</a><a href="#services" className="ml-auto flex items-center gap-2 hover:text-white">Scroll to explore <ArrowDown size={14}/></a></div>
+          <div className="mt-14 flex flex-wrap gap-x-10 gap-y-3 border-t border-white/10 pt-5 text-xs uppercase tracking-widest text-slate-500"><span>Moratuwa</span><a href="mailto:Jaindusasandezoysa@gmail.com" className="hover:text-cyan-400">Jaindusasandezoysa@gmail.com</a><a href="#services" className="ml-auto flex items-center gap-2 hover:text-white">Scroll to explore <ArrowDown size={14}/></a></div>
         </div>
         <div className="hero-visual"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&h=1400&fit=crop" alt="Modern collaborative office workspace" className="h-full w-full object-cover"/><div className="absolute inset-0 bg-gradient-to-r from-[#020b16] via-[#020b16]/25 to-transparent"/><div className="absolute bottom-8 right-8 hidden border-r-2 border-cyan-400 pr-4 text-right lg:block"><p className="text-xs uppercase tracking-[.2em] text-slate-300">Design · Technology</p><p className="mt-1 font-heading text-2xl font-bold uppercase text-white">Built to perform</p></div></div>
       </section>
@@ -49,7 +48,7 @@ export default function Home() {
 
       <section className="section-shell">
         <div className="section-head"><div><p className="overline text-cyan-400">Selected work</p><h2>Ideas turned into<br/><span className="outline-text">digital products.</span></h2></div><Link href="/projects" className="pill-cta self-end">View all projects <span><ArrowRight size={18}/></span></Link></div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2">{projects.map((project,i)=><Link href="/projects" key={project.title} className={`project-card ${i===0?'md:col-span-2':''}`}><img src={project.image} alt={project.title} loading="lazy"/><div className="project-overlay"/><div className="project-info"><p>{project.category}</p><h3>{project.title}</h3><span>{project.description}</span></div><ArrowUpRight className="absolute right-6 top-6 text-white"/></Link>)}</div>
+        <div className="mt-14 grid gap-6 md:grid-cols-2">{projects.map((project)=>{ const Card = project.url ? 'a' : Link; return <Card href={project.url ?? '/projects'} target={project.url ? '_blank' : undefined} rel={project.url ? 'noreferrer' : undefined} key={project.title} className="project-card"><img src={project.image} alt={project.title} loading="lazy"/><div className="project-overlay"/><div className="project-info"><p>{project.category}</p><h3>{project.title}</h3><span>{project.description}</span></div><ArrowUpRight className="absolute right-6 top-6 text-white"/></Card>})}</div>
       </section>
 
       <section className="px-4 pb-24 sm:px-6 lg:px-8"><div className="final-cta"><p className="overline text-cyan-400">Your next move</p><h2>Let&apos;s build something<br/><em>that stands out.</em></h2><Link href="/contact" className="pill-cta mt-8">Let&apos;s talk <span><ArrowUpRight size={18}/></span></Link></div></section>

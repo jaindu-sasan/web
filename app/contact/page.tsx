@@ -113,7 +113,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-                      placeholder="+1 (234) 567-890"
+                      placeholder="0719201718"
                     />
                   </div>
 
@@ -178,8 +178,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Email</h3>
-                      <a href="mailto:info@trustcode.com" className="text-primary hover:text-primary/80 transition-colors">
-                        info@trustcode.com
+                      <a href="mailto:Jaindusasandezoysa@gmail.com" className="text-primary hover:text-primary/80 transition-colors">
+                        Jaindusasandezoysa@gmail.com
                       </a>
                     </div>
                   </div>
@@ -190,8 +190,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Phone</h3>
-                      <a href="tel:+1234567890" className="text-primary hover:text-primary/80 transition-colors">
-                        +1 (234) 567-890
+                      <a href="tel:0719201718" className="text-primary hover:text-primary/80 transition-colors">
+                        0719201718
                       </a>
                     </div>
                   </div>
@@ -203,9 +203,8 @@ export default function Contact() {
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Address</h3>
                       <p className="text-muted-foreground">
-                        123 Tech Street<br />
-                        Innovation City, IC 12345<br />
-                        United States
+                        No 91 Kaldemulla Road<br />
+                        Moratuwa
                       </p>
                     </div>
                   </div>
@@ -225,7 +224,7 @@ export default function Contact() {
                       Chat with us on WhatsApp for quick assistance.
                     </p>
                     <a
-                      href="https://wa.me/1234567890"
+                      href="https://wa.me/94719201718"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium text-sm"

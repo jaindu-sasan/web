@@ -27,8 +27,8 @@ export function Navbar() {
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#020b16]/95 shadow-xl shadow-black/20 backdrop-blur-xl' : 'bg-[#020b16]'}`}>
       <div className="border-b border-white/8 bg-[#071522]">
         <div className="mx-auto flex h-8 max-w-7xl items-center justify-end gap-5 px-4 text-[11px] text-slate-400 sm:px-6 lg:px-8">
-          <a href="tel:+1234567890" className="flex items-center gap-1.5 hover:text-cyan-400"><Phone size={11} />+1 (234) 567-890</a>
-          <a href="mailto:info@trustcode.com" className="hidden items-center gap-1.5 hover:text-cyan-400 sm:flex"><Mail size={11} />info@trustcode.com</a>
+          <a href="tel:0719201718" className="flex items-center gap-1.5 hover:text-cyan-400"><Phone size={11} />0719201718</a>
+          <a href="mailto:Jaindusasandezoysa@gmail.com" className="hidden items-center gap-1.5 hover:text-cyan-400 sm:flex"><Mail size={11} />Jaindusasandezoysa@gmail.com</a>
         </div>
       </div>
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
